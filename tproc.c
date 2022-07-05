@@ -53,9 +53,6 @@ int main() {
 			ASCII[i] = 0;
 		}
 
-		//importing text from text2.txt char by char to txt2 array
-		fh2 = fopen("text2.txt", "r");
-
 		system("clear");
 
 		printf(
@@ -66,6 +63,9 @@ int main() {
 		}
 
 		system("clear");
+		
+		//importing text from text2.txt char by char to txt2 array
+		fh2 = fopen("text2.txt", "r");
 
 		if (fh2 != NULL) {
 			while (!feof(fh2)) {
