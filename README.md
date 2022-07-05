@@ -13,9 +13,9 @@ What it does?
 How to use?
 
 - open terminal and type the following commands:
-$ cd "the precise location of the tproc-main folder"/tproc
-$ make
-$ ./output
+- $ cd "the precise location of the tproc-main folder"/tproc
+- $ make
+- $ ./output
 
 Notes
 
