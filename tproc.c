@@ -40,7 +40,6 @@ int main() {
 		lentxt1 = -1;
 		lentxt2 = 0;
 		len2txt1 = 0;
-		k = 0;
 		enter = 0;
 
 		// array variables clearing
@@ -57,12 +56,16 @@ int main() {
 		//importing text from text2.txt char by char to txt2 array
 		fh2 = fopen("text2.txt", "r");
 
+		system("clear");
+
 		printf(
-				"Insert/update first and second text in the text files and press return. ");
+				"Insert/update first and second text in the text files and press return. \n");
 
 		while (enter != '\r' && enter != '\n') {
 			enter = getchar();
 		}
+
+		system("clear");
 
 		if (fh2 != NULL) {
 			while (!feof(fh2)) {
@@ -72,6 +75,7 @@ int main() {
 
 			fclose(fh2);
 		} else {
+			system("clear");
 			printf("Error opening file. \n");
 			return 0;
 		}
@@ -100,8 +104,9 @@ int main() {
 			if (strlen(txt2) >= 10000) {
 				while (complete <= j + 1) {
 					if (fmod((complete + 1), (lentxt2 / 100)) <= 0.01) {
+						system("clear");
 						printf(
-								"Looking for unique characters in text 2: %lu%% \n",
+								"Searching for unique characters in text 2: %lu%% \n",
 								j * 100 / strlen(txt2));
 					}
 					complete += 0.01;
@@ -109,20 +114,13 @@ int main() {
 			}
 		}
 
-		printf("\n");
-		printf("The second text has been processed from file. \n");
+		system("clear");
 
-		// counting the unique printable characters that were left in ASCII char
-		for (i = 0; i < 95; i++) {
-			if (ASCII[i] == npc) {
-				k++;
-			}
+		printf("Done searching for unique characters in text 2. \n");
+
+		for (k = 0; k < 1000000; k += 0.001) {
+
 		}
-
-		printf(
-				"The percentage of unique printable characters that have been found in text 2 is: %f%% (%f/95) \n",
-				(k * 100) / 95, k);
-		printf("\n");
 
 		// clearing some of the non-array variables for further use 
 		m = 0;
@@ -142,6 +140,7 @@ int main() {
 
 			fclose(fh1);
 		} else {
+			system("clear");
 			printf("Error opening file. \n");
 			return 0;
 		}
@@ -177,10 +176,11 @@ int main() {
 
 			len2txt1 = strlen(txt1); // will be used for float calculations in order to display the progress percentage 
 
-			if (strlen(txt1) >= 100) // if text1 has more than 100 chars, percentage count will be initiated
+			if (strlen(txt1) >= 10000) // if text1 has more than 10000 chars, percentage count will be initiated
 					{
 				while (complete <= j + 1) {
 					if (fmod((complete + 1), (len2txt1 / 100)) <= 0.01) {
+						system("clear");
 						printf("Checking for matches: %lu%% \n",
 								j * 100 / strlen(txt1));
 					}
@@ -192,32 +192,29 @@ int main() {
 				}
 			}
 
-			else if (strlen(txt1) < 100) {
+			else if (strlen(txt1) < 10000) {
 				if (txt1[j] != '\n') {
 					lentxt1++;
 				}
 			}
 		}
 
-		printf("\n");
-		printf("The first text has been processed from file. \n");
+		system("clear");
 
-		for (i = 0; i < 95; i++) {
-			if (ASCII[i] == npc) // counting the unique printable characters that remained in ASCII char
-					{
-				k++;
-			}
+		enter = 0;
+
+		printf("Done checking for matches. Press return. \n");
+		while (enter != '\r' && enter != '\n') {
+			enter = getchar();
 		}
-		printf(
-				"The percentage of unique printable characters that have been found in text 1 is: %f%% (%f/95) \n",
-				(k * 100) / 95, k);
+
+		system("clear");
 
 		// displaying the results after both texts have been processed
-		printf("\n");
-		printf("Matches: %f \n", matches);
+		printf("Matches: %d \n", (int) matches);
 		printf(
-				"Number of characters found in text 1 (printable w/ extended): %f \n",
-				lentxt1);
+				"Number of characters found in text 1 (printable w/ extended): %d \n",
+				(int) lentxt1);
 		percentage = ((matches * 100) / lentxt1);
 		printf(
 				"The percentage of text 1 that can be created using only characters from text 2 is: %f%% \n",
@@ -232,6 +229,8 @@ int main() {
 		scanf(" %[^\n]%*c", &repeat);
 
 	}
+
+	system("clear");
 
 	return 0;
 }
