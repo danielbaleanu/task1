@@ -203,12 +203,7 @@ void print_results() {
 				percentage);
 	}
 	printf("\n");
-	printf("Do you wish to process another set of texts? (y/n) \n");
-	printf("*if so, please enter 'y' for yes \n");
-	printf(
-			"*otherwise, please insert 'n' for no, in order to terminate the program \n");
-	printf("\n");
-	printf("Insert response: ");
+	printf("Do you wish to process another set of texts? (y/n) \nInsert response: ");
 	scanf(" %[^\n]%*c", &repeat);
 }
 
@@ -217,11 +212,6 @@ void error_print() {
 	system("clear");
 
 	printf("Error opening files. \nDo you wish to try again? (y/n) \n");
-	printf(
-			"*if you have checked the files, please enter 'y', in order to try again \n");
-	printf(
-			"*otherwise, please insert 'n' for no, in order to terminate the program \n");
-	printf("\n");
 	printf("Insert response: ");
 	scanf(" %[^\n]%*c", &repeat);
 }
