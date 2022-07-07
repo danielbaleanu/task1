@@ -1,7 +1,6 @@
 # tproc
 Text Processing
 
-- tool used for checking the accuracy of the code: https://www.charactercountonline.com
 - don't forget to save the text files after updating their content
 
 What it does?
