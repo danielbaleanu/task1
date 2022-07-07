@@ -31,9 +31,6 @@ void var_init() {
 
 	for (i = 0; i < 256; i++) {
 		ASCII[i] = '\0' + i;
-	}
-
-	for (i = 0; i < 256; i++) {
 		matchASCII[i] = '\0';
 	}
 }
