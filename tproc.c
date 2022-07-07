@@ -91,13 +91,7 @@ void searching() {
 
 		j++;
 
-		if (lentxt >= 10000) {
-			if (j % (lentxt / 100) == 0 && j < lentxt) {
-				system("clear");
-				printf("Processing (%d/2): %d%% \n", processing,
-						j * 100 / lentxt);
-			}
-		}
+		progress();
 	}
 
 	fclose(fh2);
@@ -200,7 +194,8 @@ void print_results() {
 				percentage);
 	}
 	printf("\n");
-	printf("Do you wish to process another set of texts? (y/n) \nInsert response: ");
+	printf(
+			"Do you wish to process another set of texts? (y/n) \nInsert response: ");
 	scanf(" %[^\n]%*c", &repeat);
 }
 
