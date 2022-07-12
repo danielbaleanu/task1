@@ -5,9 +5,10 @@
 
 FILE *text1, *text2;
 
-int ArrayInitFcn(int *i, char *ASCII), TextProcessingFcn(int *i, int *n,
-		int *lentxt1, double *matches, char *c, char *ASCII, char *matchASCII),
-		PrintResultsFcn(double *matches, double *percentage, int *lentxt1);
+void ArrayInitFcn(int *i, char *ASCII), ResultPrintFcn(double *matches,
+		double *percentage, int *lentxt1);
+int TextProcessingFcn(int *i, int *n, int *lentxt1, double *matches, char *c,
+		char *ASCII, char *matchASCII);
 
 int main() {
 	int i, n = 0, lentxt1 = -1;
@@ -16,17 +17,15 @@ int main() {
 
 	ArrayInitFcn(&i, ASCII);
 	TextProcessingFcn(&i, &n, &lentxt1, &matches, &c, ASCII, matchASCII);
-	PrintResultsFcn(&matches, &percentage, &lentxt1);
+	ResultPrintFcn(&matches, &percentage, &lentxt1);
 
 	return 0;
 }
 
-int ArrayInitFcn(int *i, char *ASCII) {
+void ArrayInitFcn(int *i, char *ASCII) {
 	for (*i = 0; *i < 256; *i += 1) {
 		ASCII[*i] = CHAR_MIN + *i;
 	}
-
-	return 0;
 }
 
 int TextProcessingFcn(int *i, int *n, int *lentxt1, double *matches, char *c,
@@ -68,7 +67,7 @@ int TextProcessingFcn(int *i, int *n, int *lentxt1, double *matches, char *c,
 }
 
 // fcn for displaying results
-int PrintResultsFcn(double *matches, double *percentage, int *lentxt1) {
+void ResultPrintFcn(double *matches, double *percentage, int *lentxt1) {
 	// calculating the percentage of text 1 that can be created using only chars from text 2
 	*percentage = (*matches * 100) / *lentxt1;
 
@@ -85,6 +84,4 @@ int PrintResultsFcn(double *matches, double *percentage, int *lentxt1) {
 				"The percentage of text 1 that can be created using only characters from text 2 is: %.2f%% \n",
 				*percentage);
 	}
-
-	return 0;
 }
