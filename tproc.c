@@ -62,7 +62,7 @@ int TextProcessingFcn(int *i, int *n, int *lentxt1, double *matches, char *c,
 		return 0;
 	} else {
 		printf("Error.\n");
-		return 0;
+		return -1;
 	}
 }
 
